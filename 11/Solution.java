@@ -1,8 +1,9 @@
 import java.io.*;
 import java.util.*;
 import java.math.*;
+import java.util.Arrays;
 
-public class Solution {
+public class qwe {
    /*
     * ќпределить максимальную мощность подмножества элементов заданного массива. Ёлементы включаютс€ в подмножество, если
 	* разность между любыми элементами подмножества меньше либо равна 1.	
@@ -23,15 +24,33 @@ public class Solution {
 	* 3
 	*/
 	
-    static int func1(int[] a) {
-       
-    }
+    static int func1(int[] a) 
+    {
+    	int n = a.length;
+    	Arrays.sort(a);
+    	int max = 0;
+        int s = 0;       
+        
+        for(int i = 0; i < n; i++) 
+        {
+            for(int j = i; j < n; j++)
+                if(a[j] - a[i] <= 1) 
+                    s++;
+   
+            if(s > max)
+                max = s;
+            s = 0;
+        }
+        
+        return max;
+      }
+    
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("out.txt"));//System.getenv("OUTPUT_PATH")
 
+    	
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -45,10 +64,8 @@ public class Solution {
             a[i] = aItem;
         }
 
-	
-        bufferedWriter.write(String.valueOf(result));
-       
-        bufferedWriter.close();
+        System.out.print(func1(a));;		
+
         scanner.close();
     }
 }
