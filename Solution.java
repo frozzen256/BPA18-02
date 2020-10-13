@@ -1,1 +1,0 @@
-Ya ne bydy rabotat
