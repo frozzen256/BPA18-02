@@ -24,17 +24,17 @@ public class Solution {
 	* 3
 	*/
 	
-    static int func1(int[] a) 
+    static int func1(int[] A) 
     {
-    	int n = a.length;
-    	Arrays.sort(a);
+    	int n = A.length;
+    	Arrays.sort(A);
     	int max = 0;
         int s = 0;       
         
         for(int i = 0; i < n; i++) 
         {
             for(int j = i; j < n; j++)
-                if(a[j] - a[i] <= 1) 
+                if(A[j] - A[i] <= 1) 
                     s++;
    
             if(s > max)
