@@ -1,12 +1,6 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
+package com.company;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
-
-public class Solution {
+public class Main {
 
     /* В саду растут 2 дерева: яблоня и апельсин.
      * а - точка расположения яблони, b - точка расположения апельсина.
@@ -20,9 +14,21 @@ public class Solution {
 
 
     // Complete the countApplesAndOranges function below.
-    static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+    static int countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+        int result =0;
 
+        for(int i=0;i<apples.length;i++)
+        {
+            if(apples[i]>=s && apples[i]<=t)
+                result++;
+        }
+        for(int j=0;j<oranges.length;j++)
+        {
+            if(oranges[j]>=s && oranges[j]<=t)
+                result++;
+        }
 
+        return result;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -48,6 +54,7 @@ public class Solution {
 
         int[] apples = new int[m];
 
+
         String[] applesItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -66,6 +73,7 @@ public class Solution {
             oranges[i] = orangesItem;
         }
 
+        System.out.print(countApplesAndOranges(s,t,a,b,apples,oranges));
         scanner.close();
 
     }
