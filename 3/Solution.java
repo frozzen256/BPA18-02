@@ -16,9 +16,8 @@ public class Solution {
 	* 1 <= v1 <= 10e4
 	* 1 <= v2 <= 10e4
 	*
-	* Пример: 0 3 4 2. Ответ: YES  0 2 5 3 NO
+	* Пример: 0 3 4 2. Ответ: YES
 	*/
-
 
     // Complete the kangaroo function below.
     static String kangaroo(int x1, int v1, int x2, int v2) {
