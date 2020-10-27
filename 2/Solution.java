@@ -1,30 +1,38 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
+package com.company;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+public class Main {
 
-public class Solution {
-
-	 /* В саду растут 2 дерева: яблоня и апельсин.
-	* а - точка расположения яблони, b - точка расположения апельсина.
-	* Имется участок с границами [s, t] и два массива, описывающих
-	* местоположение упавших яблок и апельсин - d, размерности n и m.
-	* 1 <= s, t, a, b, n, m <= 10e5;
-	* -10e5 <= d <= 10e5;
-	* a < s < t < b;
-	* Найти сколько яблок и апельсин можно собрать Никодиму на участке [s, t]
-	*/
-
+    /* Р’ СЃР°РґСѓ СЂР°СЃС‚СѓС‚ 2 РґРµСЂРµРІР°: СЏР±Р»РѕРЅСЏ Рё Р°РїРµР»СЊСЃРёРЅ.
+     * Р° - С‚РѕС‡РєР° СЂР°СЃРїРѕР»РѕР¶РµРЅРёСЏ СЏР±Р»РѕРЅРё, b - С‚РѕС‡РєР° СЂР°СЃРїРѕР»РѕР¶РµРЅРёСЏ Р°РїРµР»СЊСЃРёРЅР°.
+     * РРјРµС‚СЃСЏ СѓС‡Р°СЃС‚РѕРє СЃ РіСЂР°РЅРёС†Р°РјРё [s, t] Рё РґРІР° РјР°СЃСЃРёРІР°, РѕРїРёСЃС‹РІР°СЋС‰РёС…
+     * РјРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ СѓРїР°РІС€РёС… СЏР±Р»РѕРє Рё Р°РїРµР»СЊСЃРёРЅ - d, СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё n Рё m.
+     * 1 <= s, t, a, b, n, m <= 10e5;
+     * -10e5 <= d <= 10e5;
+     * a < s < t < b;
+     * РќР°Р№С‚Рё СЃРєРѕР»СЊРєРѕ СЏР±Р»РѕРє Рё Р°РїРµР»СЊСЃРёРЅ РјРѕР¶РЅРѕ СЃРѕР±СЂР°С‚СЊ РќРёРєРѕРґРёРјСѓ РЅР° СѓС‡Р°СЃС‚РєРµ [s, t]
+     */
 
 
     // Complete the countApplesAndOranges function below.
-    static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+       public static int countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+        int result =0;
 
+        for(int i=0;i<apples.length;i++)
+        {
+            apples[i]=apples[i]+a;
+            if(apples[i]>s && apples[i]<t)
+                result++;
+        }
+        for(int j=0;j<oranges.length;j++)
+        {
+            oranges[j]=oranges[j]+b;
+            if(oranges[j]>s && oranges[j]<t)
+                result++;
+        }
 
+        return result;
     }
+    
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -49,6 +57,7 @@ public class Solution {
 
         int[] apples = new int[m];
 
+
         String[] applesItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -67,6 +76,8 @@ public class Solution {
             oranges[i] = orangesItem;
         }
 
-         scanner.close();
+        System.out.print(countApplesAndOranges(s,t,a,b,apples,oranges));
+        scanner.close();
+
     }
 }
