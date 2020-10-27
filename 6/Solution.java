@@ -36,39 +36,83 @@ public class Solution {
 	 */ 
 
     // Complete the activityNotifications function below.
-    static int activityNotifications(int[] expenditure, int d) {
-
-
-     }
-
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+    static int[] bubbleSort(int[] array, int d){
+        for(int i = 0; i < d; i++){
+            for(int j = 0; j < d-i-1; j++){
+                if(array[j] > array[j+1]){
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+        return array;
+    }
+    static int activityNotifications(int[] expenditure, int d, int n)
+    {
+        int days = 0, k = 0;
+        double m = 0;
+        int[] halfActivity = new int[d];
+        for(int i = 0; i < d; i++){
+            halfActivity[i] = expenditure[i];
+        }
+        bubbleSort(halfActivity,d);
+        if(d % 2 != 0){
+            while(d+k < n){
+                m = halfActivity[((d+1)/2)-1];
+                if(2*m <= expenditure[d+k]){
+                    days++;
+                    halfActivity[0] = expenditure[d+k];
+                    k++;
+                    bubbleSort(halfActivity,d);
+                }
+                else{
+                    halfActivity[0] = expenditure[d+k];
+                    k++;
+                    bubbleSort(halfActivity,d);
+                }
+            }
+        }
+        else{
+            while(d+k < n){
+                m = (double)(halfActivity[d/2] + halfActivity[(d/2)-1]) / 2;
+                if(2*m <= expenditure[d+k]){
+                    days++;
+                    halfActivity[0] = expenditure[d+k];
+                    k++;
+                    bubbleSort(halfActivity,d);
+                }
+                else{
+                    halfActivity[0] = expenditure[d+k];
+                    k++;
+                    bubbleSort(halfActivity,d);
+                }
+            }
+        }
+        return days;
+    }
 
+    public static void main(String[] args) throws IOException{
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("Solution.txt"));
         String[] nd = scanner.nextLine().split(" ");
-
         int n = Integer.parseInt(nd[0]);
-
         int d = Integer.parseInt(nd[1]);
-
         int[] expenditure = new int[n];
-
         String[] expenditureItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
         for (int i = 0; i < n; i++) {
             int expenditureItem = Integer.parseInt(expenditureItems[i]);
             expenditure[i] = expenditureItem;
         }
+        bw.write(String.valueOf(activityNotifications(expenditure,d,n)));
+        bw.newLine();
 
-        
-	bufferedWriter.write(String.valueOf(r));
-        bufferedWriter.newLine();
-
-        bufferedWriter.close();
-
+        bw.close();
         scanner.close();
+        System.out.println(activityNotifications(expenditure,d,n));
     }
-
 }
