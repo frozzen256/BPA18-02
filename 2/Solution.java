@@ -14,7 +14,6 @@ public class Main {
 
 
     // Complete the countApplesAndOranges function below.
-    static int countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
        public static int countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
         int result =0;
 
@@ -33,7 +32,7 @@ public class Main {
 
         return result;
     }
-    }
+    
 
     private static final Scanner scanner = new Scanner(System.in);
 
