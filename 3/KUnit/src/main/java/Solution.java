@@ -21,7 +21,7 @@ public class Solution {
      * 1 <= v1 <= 10e4
      * 1 <= v2 <= 10e4
      *
-     * Пример: 0 3 4 2 YES  0 2 5 3 NO
+     * Пример: 0 3 4 2 YES  0 2 5 3 NO //
      */
 
     // Complete the kangaroo function below.
