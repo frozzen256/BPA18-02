@@ -35,6 +35,7 @@ public class Main {
             System.out.println((float) p/arr.length);
             System.out.println((float) z/arr.length);
 
+
         }
 
 		 public static void main(String[] args) {
@@ -54,7 +55,9 @@ public class Main {
 
         scanner.close();
 
+
              func1(arr);
+
 
     }
 

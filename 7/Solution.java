@@ -46,6 +46,7 @@ public class Main {
         int[] scores = new int[n];
         String[] scoresItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
         int[] scores = new int[n];
 
         String[] scoresItems = scanner.nextLine().split(" ");
@@ -75,3 +76,4 @@ public class Main {
         scanner.close();
     }
 }
+
