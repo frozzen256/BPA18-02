@@ -1,10 +1,7 @@
 .idea/
 *.iml
-<<<<<<< HEAD
 .xml
 .class
-=======
->>>>>>> origin/Dev
 out/
 gen/
 idea-gitignore.jar
@@ -16,6 +13,5 @@ junit*.properties
 IgnoreLexer.java~
 .gradle
 .DS_Store
-.xml
 
 /verification
