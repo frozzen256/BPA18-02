@@ -1,7 +1,10 @@
 .idea/
 *.iml
+<<<<<<< HEAD
 .xml
 .class
+=======
+>>>>>>> origin/Dev
 out/
 gen/
 idea-gitignore.jar
