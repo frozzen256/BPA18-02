@@ -1,7 +1,6 @@
 .idea/
 *.iml
-.xml
-.class
+*.xml
 out/
 gen/
 idea-gitignore.jar
