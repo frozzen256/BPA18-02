@@ -3,25 +3,21 @@ import java.math.*;
 import java.security.*;
 import java.text.*;
 import java.util.*;
-<<<<<<< HEAD
 import java.util.Scanner;
-=======
->>>>>>> upstream/Dev
 import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class Solution {
      	/*
-<<<<<<< HEAD
-	     * Два кенгуру Кеша и Игорь начинают прыгать одновременно, но с разных стартовых позиций: х1 и х2.
-         * И имеют разную длину прыжков: v1 и v2.
-         * Прыгают в одном направлении. Определить смогут ли они оказаться в
-         * одной точке в один момент времении. Если да, то вывести YES, иначе NO.
+	     * ÐÐ²Ð° ÐºÐµÐ½Ð³ÑÑÑ ÐÐµÑÐ° Ð¸ ÐÐ³Ð¾ÑÑ Ð½Ð°ÑÐ¸Ð½Ð°ÑÑ Ð¿ÑÑÐ³Ð°ÑÑ Ð¾Ð´Ð½Ð¾Ð²ÑÐµÐ¼ÐµÐ½Ð½Ð¾, Ð½Ð¾ Ñ ÑÐ°Ð·Ð½ÑÑ ÑÑÐ°ÑÑÐ¾Ð²ÑÑ Ð¿Ð¾Ð·Ð¸ÑÐ¸Ð¹: Ñ1 Ð¸ Ñ2.
+         * Ð Ð¸Ð¼ÐµÑÑ ÑÐ°Ð·Ð½ÑÑ Ð´Ð»Ð¸Ð½Ñ Ð¿ÑÑÐ¶ÐºÐ¾Ð²: v1 Ð¸ v2.
+         * ÐÑÑÐ³Ð°ÑÑ Ð² Ð¾Ð´Ð½Ð¾Ð¼ Ð½Ð°Ð¿ÑÐ°Ð²Ð»ÐµÐ½Ð¸Ð¸. ÐÐ¿ÑÐµÐ´ÐµÐ»Ð¸ÑÑ ÑÐ¼Ð¾Ð³ÑÑ Ð»Ð¸ Ð¾Ð½Ð¸ Ð¾ÐºÐ°Ð·Ð°ÑÑÑÑ Ð²
+         * Ð¾Ð´Ð½Ð¾Ð¹ ÑÐ¾ÑÐºÐµ Ð² Ð¾Ð´Ð¸Ð½ Ð¼Ð¾Ð¼ÐµÐ½Ñ Ð²ÑÐµÐ¼ÐµÐ½Ð¸Ð¸. ÐÑÐ»Ð¸ Ð´Ð°, ÑÐ¾ Ð²ÑÐ²ÐµÑÑÐ¸ YES, Ð¸Ð½Ð°ÑÐµ NO.
          * 0 <= x1 <= x2 <= 10000
          * 1 <= v1 <= 10e4
          * 1 <= v2 <= 10e4
          *
-         * Пример: 0 3 4 2 YES  0 2 5 3 NO
+         * ÐÑÐ¸Ð¼ÐµÑ: 0 3 4 2 YES  0 2 5 3 NO
          */
 
     // Complete the kangaroo function below.
@@ -37,15 +33,6 @@ public class Solution {
         }
         if (result.length() == 0) result = "NO";
         return result;
-=======
-	* ??? ??????? ???? ? ????? ???????? ??????? ????????????, ?? ? ?????? ????????? ???????: ?1 ? ?2.
-	* ? ????? ?????? ????? ???????: v1 ? v2.
-	* ??????? ? ????? ???????????. ?????????? ?????? ?? ??? ????????? ?
-	* ????? ????? ? ???? ?????? ????????. ???? ??, ?? ??????? YES, ????? NO.
-	* 0 <= x1 <= x2 <= 10000
-	* 1 <= v1 <= 10e4
-	* 1 <= v2 <= 10e4
-	*
 	* ??????: 0 3 4 2. ?????: YES
 	*/
 
@@ -53,19 +40,13 @@ public class Solution {
     static String kangaroo(int x1, int v1, int x2, int v2) {
 
 
->>>>>>> upstream/Dev
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-<<<<<<< HEAD
         FileWriter F = new FileWriter("OUTPUT_PATH.txt");
        BufferedWriter bufferedWriter = new BufferedWriter(F);
-=======
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
->>>>>>> upstream/Dev
-
         String[] x1V1X2V2 = scanner.nextLine().split(" ");
 
         int x1 = Integer.parseInt(x1V1X2V2[0]);
@@ -76,12 +57,7 @@ public class Solution {
 
         int v2 = Integer.parseInt(x1V1X2V2[3]);
 
-<<<<<<< HEAD
         bufferedWriter.write(kangaroo(x1,v1,x2,v2));
-=======
-
-        bufferedWriter.write(result);
->>>>>>> upstream/Dev
         bufferedWriter.newLine();
 
         bufferedWriter.close();
