@@ -1,0 +1,11 @@
+
+*.xml
+*.xml
+5/Project/example.iml
+5/Project/.idea/.name
+5/Project/target/classes/Main.class
+5/Project/target/classes/SockSort.class
+5/Project/target/test-classes/SockSortTestRight.class
+5/Project/target/test-classes/SockSortTestWrong.class
+5/Project/src/main/java/Main.java
+5/Project/src/main/java/SockSort.java
