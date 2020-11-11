@@ -34,7 +34,6 @@ class JThread extends Thread {
         this.apples=apples;
         this.oranges=oranges;
     }
-
     public void run(){
 
         System.out.printf("%s старт... \n", Thread.currentThread().getName());
@@ -44,6 +43,9 @@ class JThread extends Thread {
         System.out.printf("%s финиш... \n", Thread.currentThread().getName());
     }
 }
+
+
+
 
 public class Program {
 
