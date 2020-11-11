@@ -93,7 +93,6 @@ public class Program {
         System.out.println("Финиш основного потока...");
 
         scanner.close();
-
     }
 
     private static final Scanner scanner = new Scanner(System.in);
