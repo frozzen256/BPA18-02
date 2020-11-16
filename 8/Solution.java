@@ -3,13 +3,14 @@ import java.util.*;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
+
     /*
-     * Дано: n - количество чисел в массиве
-     *		ar - массив чисел
+     * ÐÐ°Ð½Ð¾: n - ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ ÑÐ¸ÑÐµÐ» Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ
+     *		ar - Ð¼Ð°ÑÑÐ¸Ð² ÑÐ¸ÑÐµÐ»
      * 		0 < n < 100
      *		-100 <= ar[i] <= 100
-     * Вычислить нормализованное количество положительных, отрицательных и нулевых элементов
-     * Пример:
+     * ÐÑÑÐ¸ÑÐ»Ð¸ÑÑ Ð½Ð¾ÑÐ¼Ð°Ð»Ð¸Ð·Ð¾Ð²Ð°Ð½Ð½Ð¾Ðµ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸ÑÐµÐ»ÑÐ½ÑÑ, Ð¾ÑÑÐ¸ÑÐ°ÑÐµÐ»ÑÐ½ÑÑ Ð¸ Ð½ÑÐ»ÐµÐ²ÑÑ ÑÐ»ÐµÐ¼ÐµÐ½ÑÐ¾Ð²
+     * ÐÑÐ¸Ð¼ÐµÑ:
      *	6
      *	-4 3 -9 0 4 1
      *
@@ -33,6 +34,7 @@ public class Main {
             System.out.println((float) q/arr.length);
             System.out.println((float) p/arr.length);
             System.out.println((float) z/arr.length);
+
         }
 
 		 public static void main(String[] args) {
@@ -51,7 +53,9 @@ public class Main {
         }
 
         scanner.close();
+
              func1(arr);
+
     }
 
        
