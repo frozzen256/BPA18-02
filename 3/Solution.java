@@ -3,20 +3,37 @@ import java.math.*;
 import java.security.*;
 import java.text.*;
 import java.util.*;
+import java.util.Scanner;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class Solution {
      	/*
-	* Два кенгуру Кеша и Игорь начинают прыгать одновременно, но с разных стартовых позиций: х1 и х2.
-	* И имеют разную длину прыжков: v1 и v2.
-	* Прыгают в одном направлении. Определить смогут ли они оказаться в
-	* одной точке в один момент времении. Если да, то вывести YES, иначе NO.
-	* 0 <= x1 <= x2 <= 10000
-	* 1 <= v1 <= 10e4
-	* 1 <= v2 <= 10e4
-	*
-	* Пример: 0 3 4 2. Ответ: YES
+	     * ГђВ”ГђВІГђВ° ГђВєГђВµГђВЅГђВіГ‘ВѓГ‘ВЂГ‘Вѓ ГђВљГђВµГ‘В€ГђВ° ГђВё ГђВГђВіГђВѕГ‘ВЂГ‘ВЊ ГђВЅГђВ°Г‘В‡ГђВёГђВЅГђВ°Г‘ВЋГ‘В‚ ГђВїГ‘ВЂГ‘В‹ГђВіГђВ°Г‘В‚Г‘ВЊ ГђВѕГђВґГђВЅГђВѕГђВІГ‘ВЂГђВµГђВјГђВµГђВЅГђВЅГђВѕ, ГђВЅГђВѕ Г‘ВЃ Г‘ВЂГђВ°ГђВ·ГђВЅГ‘В‹Г‘В… Г‘ВЃГ‘В‚ГђВ°Г‘ВЂГ‘В‚ГђВѕГђВІГ‘В‹Г‘В… ГђВїГђВѕГђВ·ГђВёГ‘В†ГђВёГђВ№: Г‘В…1 ГђВё Г‘В…2.
+         * ГђВ ГђВёГђВјГђВµГ‘ВЋГ‘В‚ Г‘ВЂГђВ°ГђВ·ГђВЅГ‘ВѓГ‘ВЋ ГђВґГђВ»ГђВёГђВЅГ‘Вѓ ГђВїГ‘ВЂГ‘В‹ГђВ¶ГђВєГђВѕГђВІ: v1 ГђВё v2.
+         * ГђВџГ‘ВЂГ‘В‹ГђВіГђВ°Г‘ВЋГ‘В‚ ГђВІ ГђВѕГђВґГђВЅГђВѕГђВј ГђВЅГђВ°ГђВїГ‘ВЂГђВ°ГђВІГђВ»ГђВµГђВЅГђВёГђВё. ГђВћГђВїГ‘ВЂГђВµГђВґГђВµГђВ»ГђВёГ‘В‚Г‘ВЊ Г‘ВЃГђВјГђВѕГђВіГ‘ВѓГ‘В‚ ГђВ»ГђВё ГђВѕГђВЅГђВё ГђВѕГђВєГђВ°ГђВ·ГђВ°Г‘В‚Г‘ВЊГ‘ВЃГ‘ВЏ ГђВІ
+         * ГђВѕГђВґГђВЅГђВѕГђВ№ Г‘В‚ГђВѕГ‘В‡ГђВєГђВµ ГђВІ ГђВѕГђВґГђВёГђВЅ ГђВјГђВѕГђВјГђВµГђВЅГ‘В‚ ГђВІГ‘ВЂГђВµГђВјГђВµГђВЅГђВёГђВё. ГђВ•Г‘ВЃГђВ»ГђВё ГђВґГђВ°, Г‘В‚ГђВѕ ГђВІГ‘В‹ГђВІГђВµГ‘ВЃГ‘В‚ГђВё YES, ГђВёГђВЅГђВ°Г‘В‡ГђВµ NO.
+         * 0 <= x1 <= x2 <= 10000
+         * 1 <= v1 <= 10e4
+         * 1 <= v2 <= 10e4
+         *
+         * ГђВџГ‘ВЂГђВёГђВјГђВµГ‘ВЂ: 0 3 4 2 YES  0 2 5 3 NO
+         */
+
+    // Complete the kangaroo function below.
+    static String kangaroo(int x1, int v1, int x2, int v2) {
+        String result = new String();
+        while ((x1 <= 10000) && (v1 <= 10000) && (x2 <= 10000) && (v2 <= 10000)){
+            x1 += v1;
+            x2 += v2;
+            if (x1 == x2){
+                result = "YES";
+                break;
+            }
+        }
+        if (result.length() == 0) result = "NO";
+        return result;
+	* ??????: 0 3 4 2. ?????: YES
 	*/
 
     // Complete the kangaroo function below.
@@ -28,8 +45,8 @@ public class Solution {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
+        FileWriter F = new FileWriter("OUTPUT_PATH.txt");
+       BufferedWriter bufferedWriter = new BufferedWriter(F);
         String[] x1V1X2V2 = scanner.nextLine().split(" ");
 
         int x1 = Integer.parseInt(x1V1X2V2[0]);
@@ -40,8 +57,7 @@ public class Solution {
 
         int v2 = Integer.parseInt(x1V1X2V2[3]);
 
-
-        bufferedWriter.write(result);
+        bufferedWriter.write(kangaroo(x1,v1,x2,v2));
         bufferedWriter.newLine();
 
         bufferedWriter.close();
