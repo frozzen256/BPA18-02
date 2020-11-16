@@ -12,7 +12,7 @@ public class Bank {
         }
         return array;
     }
-    static int activityNotifications(int[] expenditure, int d, int n)
+    static int activityNotifications(int n, int d, int[] expenditure)
     {
 
         int days = 0, k = 0;

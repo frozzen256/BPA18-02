@@ -2,8 +2,11 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Program {
+
     private static final Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) throws IOException {
+
         Bank bank = new Bank();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new FileWriter("Solution.txt"));
@@ -17,11 +20,11 @@ public class Program {
             int expenditureItem = Integer.parseInt(expenditureItems[i]);
             expenditure[i] = expenditureItem;
         }
-        bw.write(String.valueOf(bank.activityNotifications(expenditure,d,n)));
+        bw.write(String.valueOf(bank.activityNotifications(n,d, expenditure)));
         bw.newLine();
 
         bw.close();
         scanner.close();
-        System.out.println(bank.activityNotifications(expenditure,d,n));
+        System.out.println(bank.activityNotifications(n,d, expenditure));
     }
 }
