@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 8/.idea/.name
 8/.idea/compiler.xml
@@ -13,3 +14,22 @@
 8/target/test-classes/Func1TestR.class
 8/src/main/java/Main.java
 8/test.iml
+=======
+.idea/
+*.iml
+.xml
+.class
+out/
+gen/
+idea-gitignore.jar
+resources/templates.list
+resources/gitignore/*
+build/
+build.properties
+junit*.properties
+IgnoreLexer.java~
+.gradle
+.DS_Store
+
+/verification
+>>>>>>> Dev
