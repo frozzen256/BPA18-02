@@ -1,3 +1,7 @@
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+
+import java.awt.event.TextListener;
 import java.util.Scanner;
 /* В саду растут 2 дерева: яблоня и апельсин.
  * а - точка расположения яблони, b - точка расположения апельсина.
@@ -17,9 +21,36 @@ import java.util.Scanner;
  * 1
  *
  */
+
+class JThread extends Thread {
+
+    private int s,t,a,b;
+    private int[] apples,oranges;
+    JThread(int s, int t, int a, int b, int[] apples, int[] oranges){
+        this.s=s;
+        this.t=t;
+        this.a=a;
+        this.b=b;
+        this.apples=apples;
+        this.oranges=oranges;
+    }
+    public void run(){
+
+        System.out.printf("%s старт... \n", Thread.currentThread().getName());
+
+        System.out.println("Результат вычисления:  " + Rasch.countApplesAndOranges(s,t,a,b,apples,oranges));
+
+        System.out.printf("%s финиш... \n", Thread.currentThread().getName());
+    }
+}
+
+
+
+
 public class Program {
 
     public static void main(String[] args) {
+
         String[] st = scanner.nextLine().split(" ");
 
         int s = Integer.parseInt(st[0]);
@@ -40,7 +71,6 @@ public class Program {
 
         int[] apples = new int[m];
 
-
         String[] applesItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -59,9 +89,12 @@ public class Program {
             oranges[i] = orangesItem;
         }
 
-        System.out.print(Rasch.countApplesAndOranges(s,t,a,b,apples,oranges));
-        scanner.close();
+        System.out.println("Старт основного потока...");
+        new JThread(s,t,a,b,apples,oranges).start();
+        new JThread(s,t,a,b,apples,oranges).start();
+        System.out.println("Финиш основного потока...");
 
+        scanner.close();
     }
 
     private static final Scanner scanner = new Scanner(System.in);

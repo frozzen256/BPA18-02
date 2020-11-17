@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 098ff85999e9e929f36fc1e0c4f3ed8b9903d473
 package com.company;
 import java.util.*;
 public class Main {
@@ -14,19 +19,31 @@ public class Main {
 
 
     // Complete the countApplesAndOranges function below.
+<<<<<<< HEAD
+    static int countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+=======
        public static int countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+>>>>>>> 098ff85999e9e929f36fc1e0c4f3ed8b9903d473
         int result =0;
 
         for(int i=0;i<apples.length;i++)
         {
+<<<<<<< HEAD
+            if(apples[i]>=s && apples[i]<=t)
+=======
             apples[i]=apples[i]+a;
             if(apples[i]>s && apples[i]<t)
+>>>>>>> 098ff85999e9e929f36fc1e0c4f3ed8b9903d473
                 result++;
         }
         for(int j=0;j<oranges.length;j++)
         {
+<<<<<<< HEAD
+            if(oranges[j]>=s && oranges[j]<=t)
+=======
             oranges[j]=oranges[j]+b;
             if(oranges[j]>s && oranges[j]<t)
+>>>>>>> 098ff85999e9e929f36fc1e0c4f3ed8b9903d473
                 result++;
         }
 
@@ -81,4 +98,8 @@ public class Main {
 
     }
 }
+<<<<<<< HEAD
+>>>>>>> origin/Dev
+=======
 
+>>>>>>> 098ff85999e9e929f36fc1e0c4f3ed8b9903d473
