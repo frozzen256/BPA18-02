@@ -22,30 +22,6 @@ import java.util.Scanner;
  *
  */
 
-class JThread extends Thread {
-
-    private int s,t,a,b;
-    private int[] apples,oranges;
-    JThread(int s, int t, int a, int b, int[] apples, int[] oranges){
-        this.s=s;
-        this.t=t;
-        this.a=a;
-        this.b=b;
-        this.apples=apples;
-        this.oranges=oranges;
-    }
-    public void run(){
-
-        System.out.printf("%s старт... \n", Thread.currentThread().getName());
-
-        System.out.println("Результат вычисления:  " + Rasch.countApplesAndOranges(s,t,a,b,apples,oranges));
-
-        System.out.printf("%s финиш... \n", Thread.currentThread().getName());
-    }
-}
-
-
-
 
 public class Program {
 
@@ -90,9 +66,15 @@ public class Program {
         }
 
         System.out.println("Старт основного потока...");
-        new JThread(s,t,a,b,apples,oranges).start();
-        new JThread(s,t,a,b,apples,oranges).start();
-        System.out.println("Финиш основного потока...");
+
+
+
+        System.out.printf("%s старт... \n", Thread.currentThread().getName());
+
+        new Thread(() -> System.out.println("Результат вычисления:  " + Rasch.countApplesAndOranges(s,t,a,b,apples,oranges))).start();
+        new Thread(() -> System.out.println("Результат вычисления:  " + Rasch.countApplesAndOranges(s,t,a,b,apples,oranges))).start();
+
+        System.out.printf("%s финиш... \n", Thread.currentThread().getName());
 
         scanner.close();
     }
