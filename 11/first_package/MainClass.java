@@ -43,13 +43,11 @@ public class MainClass {
 	            a[i] = aItem;
 	        }
 	        
-	        scanner.close();
-	        
-	        Solver solver = new Solver();
-	        solver.setArray(a);
-	        	        
+	        scanner.close();	        	        	        	        
 	        
 	        new Thread(() -> {
+	        	Solver solver = new Solver();
+		        solver.setArray(a);
 	        	System.out.print(solver.FirstTaskSolution(solver));
 	        }).start();
 	        	        
