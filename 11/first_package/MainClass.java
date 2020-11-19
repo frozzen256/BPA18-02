@@ -24,29 +24,8 @@ public class MainClass {
 		* Ответ:
 		* 3
 		*/
-		
-	    static int func1(int[] A) 
-	    {
-	    	int n = A.length;
-	    	Arrays.sort(A);
-	    	int max = 0;
-	        int s = 0;       
-	        
-	        for(int i = 0; i < n; i++) 
-	        {
-	            for(int j = i; j < n; j++)
-	                if(A[j] - A[i] <= 1) 
-	                    s++;
+			   
 	   
-	            if(s > max)
-	                max = s;
-	            s = 0;
-	        }
-	        
-	        return max;
-	      }
-	    
-
 	    private static final Scanner scanner = new Scanner(System.in);
 
 	    public static void main(String[] args) throws IOException {
@@ -54,9 +33,8 @@ public class MainClass {
 	    	
 	        int n = scanner.nextInt();
 	        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
+	        
 	        int[] a = new int[n];
-
 	        String[] aItems = scanner.nextLine().split(" ");
 	        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -64,9 +42,17 @@ public class MainClass {
 	            int aItem = Integer.parseInt(aItems[i]);
 	            a[i] = aItem;
 	        }
-
-	        System.out.print(func1(a));;		
-
+	        
 	        scanner.close();
+	        
+	        Solver solver = new Solver();
+	        solver.setArray(a);
+	        	        
+	        
+	        new Thread(() -> {
+	        	System.out.print(solver.FirstTaskSolution(solver));
+	        }).start();
+	        	        
+	        
 	    }
 }
