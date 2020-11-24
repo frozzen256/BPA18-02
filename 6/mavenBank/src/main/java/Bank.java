@@ -1,5 +1,11 @@
 public class Bank {
 
+    private int[] expenditure;
+
+    public Bank(int[] input){
+        expenditure = input;
+    }
+
     static int[] bubbleSort(int[] array, int d){
         for(int i = 0; i < d; i++){
             for(int j = 0; j < d-i-1; j++){
@@ -12,6 +18,7 @@ public class Bank {
         }
         return array;
     }
+
     static int activityNotifications(int n, int d, int[] expenditure)
     {
 
