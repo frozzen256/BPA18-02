@@ -28,6 +28,7 @@ public class Program {
                 System.out.println("Результат = " + bank.activityNotifications(n,d,expenditure) + " Поток № "+Thread.currentThread().getName());
             }
         });
+
         tr.start();
         System.out.println();
 
