@@ -6,7 +6,7 @@ public class Program {
     private static final Scanner scanner = new Scanner(System.in);
     private static String result;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new FileWriter("Solution.txt"));
         String[] nd = scanner.nextLine().split(" ");
@@ -25,13 +25,14 @@ public class Program {
         Thread tr = new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("Результат = " + bank.activityNotifications(n,d,expenditure) + " Поток № "+Thread.currentThread().getName());
+                result = String.valueOf(bank.activityNotifications(n,d,expenditure));
+                System.out.println("Считаю в потоке " + Thread.currentThread().getName());
             }
         });
-
         tr.start();
+        tr.join();
+        System.out.println("Результат = " + result + " Вывожу на экран в потоке " + Thread.currentThread().getName());
         System.out.println();
-
         scanner.close();
     }
 }
