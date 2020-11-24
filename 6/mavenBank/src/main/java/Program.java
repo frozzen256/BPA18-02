@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Program {
 
     private static final Scanner scanner = new Scanner(System.in);
+    private static String result;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,11 +20,15 @@ public class Program {
             expenditure[i] = expenditureItem;
         }
         Bank bank = new Bank(expenditure);
-        new Thread(() -> {
-            String result = String.valueOf(Bank.activityNotifications(n,d,expenditure));
-            System.out.println("поток " + Thread.currentThread().getName() + " => Результат = "+ result);
-        }).start();
+        System.out.println(Thread.currentThread().getName());
 
+        Thread tr = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Результат = " + bank.activityNotifications(n,d,expenditure) + " Поток № "+Thread.currentThread().getName());
+            }
+        });
+        tr.start();
         System.out.println();
 
         scanner.close();
