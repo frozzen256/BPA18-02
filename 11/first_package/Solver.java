@@ -14,9 +14,14 @@ public class Solver {
 		this.array = array; 
 	}
 	
+	//конструктор
+	public Solver (int[] array) {
+		this.array = array;
+	}
 	
-	public int FirstTaskSolution(Solver solver) {
-		int[] A = solver.array;
+	
+	public void FirstTaskSolution() {
+		int[] A = array;
 		int n = A.length;
     	Arrays.sort(A);
     	int max = 0;
@@ -31,9 +36,9 @@ public class Solver {
             if(s > max)
                 max = s;
             s = 0;
-        }
+        }    
         
-        return max;
+        System.out.println(max);
 	}
 
 }

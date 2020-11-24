@@ -43,14 +43,15 @@ public class MainClass {
 	            a[i] = aItem;
 	        }
 	        
-	        scanner.close();	        	        	        	        
+	        scanner.close();	     
 	        
-	        new Thread(() -> {
-	        	Solver solver = new Solver();
-		        solver.setArray(a);
-	        	System.out.print(solver.FirstTaskSolution(solver));
-	        }).start();
+	        //Solver solver = new Solver();
+	        //solver.setArray(a);
+	        
+	        Solver Reshalo = new Solver(a); 
+	        
+	        new Thread(Reshalo::FirstTaskSolution).start();
 	        	        
-	        
+	        	        	        
 	    }
 }
