@@ -5,18 +5,28 @@ import java.util.Scanner;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) throws IOException {
+    private static int[] result = new int[2];
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-        int[] scores = new int[n];
+        final int[] scores = new int[n];
         String[] scoresItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         for (int i = 0; i < n; i++) {
             int scoresItem = Integer.parseInt(scoresItems[i]);
             scores[i] = scoresItem;
         }
-        int[] result = function.breakingRecords(scores);
+
+
+        Thread th = new Thread(new Runnable() {
+            public void run() {
+                result = function.breakingRecords(scores);
+            }
+        });
+        th.start();
+        th.join();
+
         String outFile = System.getenv("OUTPUT_PATH");
         if(outFile != null) {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
