@@ -21,7 +21,6 @@ class Scratch {
          *    \/\/
          */
 
-        System.out.println("Hello World!");
         Scanner in = new Scanner(System.in);
 
         RouteHuman Route = new RouteHuman();
