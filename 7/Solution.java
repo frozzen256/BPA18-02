@@ -1,3 +1,4 @@
+
 package com.company;
 
 import java.io.BufferedWriter;
@@ -7,16 +8,16 @@ import java.io.IOException;
 
 public class Main {
 
-    /* Маруся играет в баскетбол и хочет стать профессионалом. Каждый сезон
-     * она ведет записи своих игр. Она подсчитывает, сколько раз она
-     * побила свой рекорд очков и сколько раз ухудшила результат. Помочь Марусе.
-     * n - количество игр за сезон.
+    /* ÐÐ°ÑÑÑÑ Ð¸Ð³ÑÐ°ÐµÑ Ð² Ð±Ð°ÑÐºÐµÑÐ±Ð¾Ð» Ð¸ ÑÐ¾ÑÐµÑ ÑÑÐ°ÑÑ Ð¿ÑÐ¾ÑÐµÑÑÐ¸Ð¾Ð½Ð°Ð»Ð¾Ð¼. ÐÐ°Ð¶Ð´ÑÐ¹ ÑÐµÐ·Ð¾Ð½
+     * Ð¾Ð½Ð° Ð²ÐµÐ´ÐµÑ Ð·Ð°Ð¿Ð¸ÑÐ¸ ÑÐ²Ð¾Ð¸Ñ Ð¸Ð³Ñ. ÐÐ½Ð° Ð¿Ð¾Ð´ÑÑÐ¸ÑÑÐ²Ð°ÐµÑ, ÑÐºÐ¾Ð»ÑÐºÐ¾ ÑÐ°Ð· Ð¾Ð½Ð°
+     * Ð¿Ð¾Ð±Ð¸Ð»Ð° ÑÐ²Ð¾Ð¹ ÑÐµÐºÐ¾ÑÐ´ Ð¾ÑÐºÐ¾Ð² Ð¸ ÑÐºÐ¾Ð»ÑÐºÐ¾ ÑÐ°Ð· ÑÑÑÐ´ÑÐ¸Ð»Ð° ÑÐµÐ·ÑÐ»ÑÑÐ°Ñ. ÐÐ¾Ð¼Ð¾ÑÑ ÐÐ°ÑÑÑÐµ.
+     * n - ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ Ð¸Ð³Ñ Ð·Ð° ÑÐµÐ·Ð¾Ð½.
      * 1 <= n <= 1000
      * 0 <= scores[i] <= 10e8
      *
-     * Пример: 9
+     * ÐÑÐ¸Ð¼ÐµÑ: 9
      *         10 5 20 20 4 5 2 25 1
-     * Ответ: 2 4
+     * ÐÑÐ²ÐµÑ: 2 4
      */
 
 
@@ -45,10 +46,12 @@ public class Main {
         int[] scores = new int[n];
         String[] scoresItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-        for (int i = 0; i < n; i++) {
-            int scoresItem = Integer.parseInt(scoresItems[i]);
-            scores[i] = scoresItem;
-        }
+        int[] scores = new int[n];
+
+        String[] scoresItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+
         int[] result = breakingRecords(scores);
         String outFile = System.getenv("OUTPUT_PATH");
         if(outFile != null) {
