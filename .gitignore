@@ -33,8 +33,8 @@ IgnoreLexer.java~
 5/Project/target/classes/SockSort.class
 5/Project/target/test-classes/SockSortTestRight.class
 5/Project/target/test-classes/SockSortTestWrong.class
-5/Project/src/main/java/Main.java
-5/Project/src/main/java/SockSort.java
+5/Project/target/test/java/SockSortTestRight.java
+5/Project/target/test/java/SockSortTestWrong.java
 5/.idea/workspace.xml
 5/1project/1project.iml
 5/1project/target/classes/Main.class
@@ -55,3 +55,4 @@ IgnoreLexer.java~
 >>>>>>> parent of a64ceb3... Обратка
 =======
 >>>>>>> parent of 047edd1... Обратка
+5/Project/src/main/java/SockSort.java
