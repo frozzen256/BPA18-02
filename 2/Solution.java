@@ -1,38 +1,30 @@
-package com.company;
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
 import java.util.*;
-public class Main {
+import java.util.concurrent.*;
+import java.util.regex.*;
 
-    /* –í —Å–∞–¥—É —Ä–∞—Å—Ç—É—Ç 2 –¥–µ—Ä–µ–≤–∞: —è–±–ª–æ–Ω—è –∏ –∞–ø–µ–ª—å—Å–∏–Ω.
-     * –∞ - —Ç–æ—á–∫–∞ —Ä–∞—Å–ø–æ–ª–æ–∂–µ–Ω–∏—è —è–±–ª–æ–Ω–∏, b - —Ç–æ—á–∫–∞ —Ä–∞—Å–ø–æ–ª–æ–∂–µ–Ω–∏—è –∞–ø–µ–ª—å—Å–∏–Ω–∞.
-     * –ò–º–µ—Ç—Å—è —É—á–∞—Å—Ç–æ–∫ —Å –≥—Ä–∞–Ω–∏—Ü–∞–º–∏ [s, t] –∏ –¥–≤–∞ –º–∞—Å—Å–∏–≤–∞, –æ–ø–∏—Å—ã–≤–∞—é—â–∏—Ö
-     * –º–µ—Å—Ç–æ–ø–æ–ª–æ–∂–µ–Ω–∏–µ —É–ø–∞–≤—à–∏—Ö —è–±–ª–æ–∫ –∏ –∞–ø–µ–ª—å—Å–∏–Ω - d, —Ä–∞–∑–º–µ—Ä–Ω–æ—Å—Ç–∏ n –∏ m.
-     * 1 <= s, t, a, b, n, m <= 10e5;
-     * -10e5 <= d <= 10e5;
-     * a < s < t < b;
-     * –ù–∞–π—Ç–∏ —Å–∫–æ–ª—å–∫–æ —è–±–ª–æ–∫ –∏ –∞–ø–µ–ª—å—Å–∏–Ω –º–æ–∂–Ω–æ —Å–æ–±—Ä–∞—Ç—å –ù–∏–∫–æ–¥–∏–º—É –Ω–∞ —É—á–∞—Å—Ç–∫–µ [s, t]
-     */
+public class Solution {
+
+	 /* ¬ Ò‡‰Û ‡ÒÚÛÚ 2 ‰ÂÂ‚‡: ˇ·ÎÓÌˇ Ë ‡ÔÂÎ¸ÒËÌ.
+	* ‡ - ÚÓ˜Í‡ ‡ÒÔÓÎÓÊÂÌËˇ ˇ·ÎÓÌË, b - ÚÓ˜Í‡ ‡ÒÔÓÎÓÊÂÌËˇ ‡ÔÂÎ¸ÒËÌ‡.
+	* »ÏÂÚÒˇ Û˜‡ÒÚÓÍ Ò „‡ÌËˆ‡ÏË [s, t] Ë ‰‚‡ Ï‡ÒÒË‚‡, ÓÔËÒ˚‚‡˛˘Ëı
+	* ÏÂÒÚÓÔÓÎÓÊÂÌËÂ ÛÔ‡‚¯Ëı ˇ·ÎÓÍ Ë ‡ÔÂÎ¸ÒËÌ - d, ‡ÁÏÂÌÓÒÚË n Ë m.
+	* 1 <= s, t, a, b, n, m <= 10e5;
+	* -10e5 <= d <= 10e5;
+	* a < s < t < b;
+	* Õ‡ÈÚË ÒÍÓÎ¸ÍÓ ˇ·ÎÓÍ Ë ‡ÔÂÎ¸ÒËÌ ÏÓÊÌÓ ÒÓ·‡Ú¸ ÕËÍÓ‰ËÏÛ Ì‡ Û˜‡ÒÚÍÂ [s, t]
+	*/
+
 
 
     // Complete the countApplesAndOranges function below.
-       public static int countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
-        int result =0;
+    static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
 
-        for(int i=0;i<apples.length;i++)
-        {
-            apples[i]=apples[i]+a;
-            if(apples[i]>s && apples[i]<t)
-                result++;
-        }
-        for(int j=0;j<oranges.length;j++)
-        {
-            oranges[j]=oranges[j]+b;
-            if(oranges[j]>s && oranges[j]<t)
-                result++;
-        }
 
-        return result;
     }
-    
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -57,7 +49,6 @@ public class Main {
 
         int[] apples = new int[m];
 
-
         String[] applesItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -76,9 +67,6 @@ public class Main {
             oranges[i] = orangesItem;
         }
 
-        System.out.print(countApplesAndOranges(s,t,a,b,apples,oranges));
-        scanner.close();
-
+         scanner.close();
     }
 }
-
