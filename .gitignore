@@ -15,6 +15,7 @@ IgnoreLexer.java~
 .DS_Store
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 *.xml
 *.xml
 5/Project/example.iml
@@ -31,6 +32,9 @@ IgnoreLexer.java~
 *.class
 5/1project/src/main/java/Solution.txt
 5/1project/Solution.txt
+=======
+/verification
+>>>>>>> parent of 053b6f9... Revert "Merge branch 'Dev'"
 =======
 /verification
 >>>>>>> parent of 053b6f9... Revert "Merge branch 'Dev'"
