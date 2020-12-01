@@ -2,8 +2,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 5570494... Merge branch 'Dev'
+=======
+>>>>>>> parent of a64ceb3... Обратка
 *.xml
 *.xml
 5/Project/example.iml
@@ -21,6 +24,7 @@
 *.class
 5/1project/src/main/java/Solution.txt
 5/1project/Solution.txt
+<<<<<<< HEAD
 =======
 /verification
 >>>>>>> parent of 053b6f9... Revert "Merge branch 'Dev'"
@@ -29,3 +33,5 @@
 >>>>>>> parent of 053b6f9... Revert "Merge branch 'Dev'"
 =======
 >>>>>>> parent of 5570494... Merge branch 'Dev'
+=======
+>>>>>>> parent of a64ceb3... Обратка
