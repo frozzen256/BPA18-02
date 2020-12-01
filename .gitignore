@@ -1,4 +1,20 @@
+.idea/
+*.iml
+.xml
+.class
+out/
+gen/
+idea-gitignore.jar
+resources/templates.list
+resources/gitignore/*
+build/
+build.properties
+junit*.properties
+IgnoreLexer.java~
+.gradle
+.DS_Store
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7,6 +23,8 @@
 >>>>>>> parent of 5570494... Merge branch 'Dev'
 =======
 >>>>>>> parent of a64ceb3... Обратка
+=======
+>>>>>>> parent of 047edd1... Обратка
 *.xml
 *.xml
 5/Project/example.iml
@@ -18,7 +36,6 @@
 5/Project/src/main/java/Main.java
 5/Project/src/main/java/SockSort.java
 5/.idea/workspace.xml
-<<<<<<< HEAD
 5/1project/1project.iml
 5/1project/target/classes/Main.class
 *.class
@@ -31,7 +48,10 @@
 =======
 /verification
 >>>>>>> parent of 053b6f9... Revert "Merge branch 'Dev'"
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 5570494... Merge branch 'Dev'
 =======
 >>>>>>> parent of a64ceb3... Обратка
+=======
+>>>>>>> parent of 047edd1... Обратка
