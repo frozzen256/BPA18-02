@@ -56,3 +56,5 @@ IgnoreLexer.java~
 =======
 >>>>>>> parent of 047edd1... Обратка
 5/Project/src/main/java/SockSort.java
+5/Project/src/test/java/SockSortTestRight.java
+5/Project/src/test/java/SockSortTestWrong.java
