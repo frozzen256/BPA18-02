@@ -1,4 +1,20 @@
+.idea/
+*.iml
+.xml
+.class
+out/
+gen/
+idea-gitignore.jar
+resources/templates.list
+resources/gitignore/*
+build/
+build.properties
+junit*.properties
+IgnoreLexer.java~
+.gradle
+.DS_Store
 
+<<<<<<< HEAD
 *.xml
 *.xml
 5/Project/example.iml
@@ -15,3 +31,6 @@
 *.class
 5/1project/src/main/java/Solution.txt
 5/1project/Solution.txt
+=======
+/verification
+>>>>>>> parent of 053b6f9... Revert "Merge branch 'Dev'"
