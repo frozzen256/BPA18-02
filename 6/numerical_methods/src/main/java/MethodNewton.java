@@ -22,7 +22,7 @@ public class MethodNewton implements MethodsStrategy {
         while(Math.abs(func1(ListX[k+1])) > epsilon)
         {
             ListX[k + 2] = ListX[k + 1] - (func1(ListX[k + 1]) / SecondDerivativeF1(ListX[k + 1]));
-           System.out.println("Итерация k = " + k + "   Полученное значение = " + ListX[k + 1]);
+            System.out.println("Итерация k = " + k + "   Полученное значение = " + ListX[k + 1]);
             k++;
         }
         System.out.println("Итоговое число итераций k = " + k);
