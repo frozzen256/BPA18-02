@@ -1,0 +1,9 @@
+Student
+[id, name, courses]
+
+Course
+[id, name, teacher-id, students-id]
+
+Teacher
+[id, exp, name, courses]
+
