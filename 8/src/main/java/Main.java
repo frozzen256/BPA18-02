@@ -8,7 +8,7 @@ public class Main {
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        int[] arr = new int[n];
+        final int[] arr = new int[n];
         System.out.println("Enter element mass:");
         String[] arrItems = scanner.nextLine().split(" ");
         System.out.println("Press Enter");
@@ -20,7 +20,11 @@ public class Main {
 
         scanner.close();
         Func1 func1 = new Func1();
-        func1.func1(arr);
-        System.out.println(func1.func1(arr));
+        System.out.println("Проверяем");
+        System.out.println("Старт "+Thread.currentThread().getName());
+        new Thread(() -> System.out.println("Результат "+ func1.func1(arr))).start();
+        new Thread(() -> System.out.println("Результат "+ func1.func1(arr))).start();
+        System.out.println("Стоп "+Thread.currentThread().getName());
+        System.out.println();
     }
 }
