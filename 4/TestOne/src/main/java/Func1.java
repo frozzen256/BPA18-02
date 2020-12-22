@@ -1,6 +1,16 @@
+
+
+
+//убрала входную переменную и сделала сеттер
 public class Func1 {
-    
-    static int staircase(int n){
+
+    private int n;
+    public void setName(int n) {
+        this.n = n;
+    }
+
+    public void staircase() {
+        System.out.println(Thread.currentThread().getName());
 
         for (int i = 0; i < n; i++) {
 
@@ -13,7 +23,6 @@ public class Func1 {
             }
             System.out.println(" ");
         }
-        return n;
     }
-    
 }
+
