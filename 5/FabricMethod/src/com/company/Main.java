@@ -7,13 +7,11 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-	    DataBase myStudentTable = new DataBase();
-	    DataBase myTeacherTable = new DataBase();
-        DataBase myCourseTable = new DataBase();
+	    DataBase DataBase = new DataBase();
 
-        Table myStudent = myStudentTable.getStudent();
-        Table myTeacher = myTeacherTable.getTeacher();
-        Table myCourse = myCourseTable.getCourse();
+        Table myStudent = DataBase.getStudent();
+        Table myTeacher = DataBase.getTeacher();
+        Table myCourse = DataBase.getCourse();
 
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("users.tsv")))
         {
