@@ -10,24 +10,20 @@ public class Main {
 
     public static void main(String[] args) {
 	    DataBase DataBase = new DataBase();
-        Table Table;
+        List<Table> Table = new ArrayList<>();
+        Table.add(DataBase.createTable(TableType.Student));
+        Table.add(DataBase.createTable(TableType.Teacher));
+        Table.add(DataBase.createTable(TableType.Course));
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("users.tsv")))
         {
-            Table = DataBase.createTable(TableType.Student);
-            bw.write(String.valueOf(Table+"\n\n"));
-            Table = DataBase.createTable(TableType.Teacher);
-            bw.write(String.valueOf(Table+"\n\n"));
-            Table = DataBase.createTable(TableType.Course);
-            bw.write(String.valueOf(Table+"\n\n"));
+            for (int i = 0; i < Table.size(); i++)
+            {
+                bw.write(String.valueOf(Table.get(i)+"\n\n"));
+            }
         }
-        catch(IOException ex){
-
+        catch(IOException ex) {
             System.out.println(ex.getMessage());
         }
-
-        //System.out.println(myStudent);
-        //System.out.println(myTeacher);
-        //System.out.println(myCourse);
     }
 }
 
@@ -49,7 +45,6 @@ enum TableType {
 class DataBase {
     public Table createTable(TableType type) {
         Table Table = null;
-
         switch (type) {
             case Student:
                 Table = new Student();
