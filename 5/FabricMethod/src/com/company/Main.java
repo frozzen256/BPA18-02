@@ -7,13 +7,13 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-	    DataBase myStudentTable = new StudentDataBase();
-	    DataBase myTeacherTable = new CourseDataBase();
-        DataBase myCourseTable = new TeacherDataBase();
+	    DataBase myStudentTable = new DataBase();
+	    DataBase myTeacherTable = new DataBase();
+        DataBase myCourseTable = new DataBase();
 
-        Table myStudent = myStudentTable.createTable();
-        Table myTeacher = myTeacherTable.createTable();
-        Table myCourse = myCourseTable.createTable();
+        Table myStudent = myStudentTable.getStudent();
+        Table myTeacher = myTeacherTable.getTeacher();
+        Table myCourse = myCourseTable.getCourse();
 
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("users.tsv")))
         {
@@ -42,24 +42,16 @@ abstract class Table {
 }
 
 
-abstract class DataBase {
-    public abstract Table createTable();
-}
-
-class StudentDataBase extends DataBase {
-    public Table createTable(){
+class DataBase {
+    public Table getStudent() {
         return new Student();
     }
-}
 
-class TeacherDataBase extends DataBase {
-    public Table createTable(){
+    public Table getTeacher() {
         return new Teacher();
     }
-}
 
-class CourseDataBase extends DataBase {
-    public Table createTable(){
+    public Table getCourse() {
         return new Course();
     }
 }
