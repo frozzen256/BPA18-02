@@ -1,32 +1,33 @@
 package com.company;
 
 import javax.xml.crypto.Data;
+import java.lang.invoke.SwitchPoint;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
 
 public class Main {
+
     public static void main(String[] args) {
 	    DataBase DataBase = new DataBase();
-
-        Table myStudent = DataBase.getStudent();
-        Table myTeacher = DataBase.getTeacher();
-        Table myCourse = DataBase.getCourse();
-
+        Table Table;
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("users.tsv")))
         {
-            bw.write(String.valueOf(myStudent+"\n\n"));
-            bw.write(String.valueOf(myTeacher+"\n\n"));
-            bw.write(String.valueOf(myCourse+"\n\n"));
+            Table = DataBase.createTable(TableType.Student);
+            bw.write(String.valueOf(Table+"\n\n"));
+            Table = DataBase.createTable(TableType.Teacher);
+            bw.write(String.valueOf(Table+"\n\n"));
+            Table = DataBase.createTable(TableType.Course);
+            bw.write(String.valueOf(Table+"\n\n"));
         }
         catch(IOException ex){
 
             System.out.println(ex.getMessage());
         }
 
-        System.out.println(myStudent);
-        System.out.println(myTeacher);
-        System.out.println(myCourse);
+        //System.out.println(myStudent);
+        //System.out.println(myTeacher);
+        //System.out.println(myCourse);
     }
 }
 
@@ -39,19 +40,30 @@ abstract class Table {
     }
 }
 
+enum TableType {
+    Student,
+    Teacher,
+    Course
+}
 
 class DataBase {
-    public Table getStudent() {
-        return new Student();
+    public Table createTable(TableType type) {
+        Table Table = null;
+
+        switch (type) {
+            case Student:
+                Table = new Student();
+                break;
+            case Teacher:
+                Table = new Teacher();
+                break;
+            case Course:
+                Table = new Course();
+                break;
+        }
+        return Table;
     }
 
-    public Table getTeacher() {
-        return new Teacher();
-    }
-
-    public Table getCourse() {
-        return new Course();
-    }
 }
 
 class Student extends Table {
