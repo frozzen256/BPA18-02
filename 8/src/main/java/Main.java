@@ -24,6 +24,7 @@ public class Main {
         System.out.println("Старт "+Thread.currentThread().getName());
         new Thread(() -> System.out.println("Результат "+ func1.func1(arr))).start();
         new Thread(() -> System.out.println("Результат "+ func1.func1(arr))).start();
+        new Thread(() -> System.out.println("Результат "+ func1.func1(arr))).start();
         System.out.println("Стоп "+Thread.currentThread().getName());
         System.out.println();
     }
