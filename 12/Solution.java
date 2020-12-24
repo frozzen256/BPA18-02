@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Scratch {
+class Solution {
 
     public static void main(String[] args) {
 	/*
@@ -21,6 +21,7 @@ class Scratch {
 	 *    \/\/
 	 */
 
+
         Scanner in = new Scanner(System.in);
 
         RouteHuman Route = new RouteHuman();
@@ -32,5 +33,7 @@ class Scratch {
         Route.setValleyNumber(in.nextInt());
 
         Route.Amout_Of_Valleys();
+
+        new Thread(Route::Amout_Of_Valleys).start();
     }
 }

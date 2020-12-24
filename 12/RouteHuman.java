@@ -2,10 +2,12 @@ public class RouteHuman {
 
     private String Route;
     private int ValleyNumber;
+    private int Amout;
 
-    public RouteHuman(String Route, int ValleyNumber) {
+    public RouteHuman(String Route, int ValleyNumber, int Amout) {
         this.Route = Route;
         this.ValleyNumber = ValleyNumber;
+        this.Amout = Amout;
     }
 
     public RouteHuman() {
@@ -26,6 +28,14 @@ public class RouteHuman {
 
     public void setValleyNumber(int ValleyNumber) {
         this.ValleyNumber = ValleyNumber;
+    }
+
+    public int getAmout() {
+        return Amout;
+    }
+
+    public void setAmout(int Amout){
+        this.Amout = Amout;
     }
 
     public void Amout_Of_Valleys() {
@@ -59,6 +69,8 @@ public class RouteHuman {
 
         System.out.println(Amout);
         Graph_Output(Max, Min, Amout);
+
+        setAmout(Amout);
     }
 
     void Graph_Output(int Max, int Min, int Amout) {
@@ -93,5 +105,6 @@ public class RouteHuman {
                     System.out.print(Graph[l][c]);
             }
         }
+        System.out.println("");
     }
 }
