@@ -11,7 +11,6 @@ public class RouteHuman {
     }
 
     public RouteHuman() {
-
     }
 
     public String getRoute() {
@@ -34,7 +33,7 @@ public class RouteHuman {
         return Amout;
     }
 
-    public void setAmout(int Amout){
+    public void setAmout(int Amout) {
         this.Amout = Amout;
     }
 
@@ -44,7 +43,7 @@ public class RouteHuman {
         int y = 0;
         boolean up = true;
         int Amout = 0;
-        int Max = 0;
+        int Max = 1;
         int Min = 0;
 
         for (char ch : Route.toCharArray()) {
@@ -68,12 +67,33 @@ public class RouteHuman {
         }
 
         System.out.println(Amout);
-        Graph_Output(Max, Min, Amout);
+
+        try {
+            Graph_Output(Max, Min, Amout);
+        }
+        //ловим исключения в массивах
+        catch (ArrayIndexOutOfBoundsException e) {
+            String s = "";
+            for (int i = 0; i < 40; i++) {
+                s += "~";
+            }
+            System.out.println(s + "\n" + e.getMessage());
+            System.out.println(Max + "\n" + Min + "\n" + s + "\n");
+        }
+        //ловим другие исключения
+        catch (Exception e) {
+            String s = "";
+            for (int i = 0; i < 40; i++) {
+                s += "~";
+            }
+            System.out.println(s + "\n" + e.getMessage() + "\n" + s + "\n");
+        }
 
         setAmout(Amout);
     }
 
-    void Graph_Output(int Max, int Min, int Amout) {
+    //пропускаем все исключения
+    void Graph_Output(int Max, int Min, int Amout) throws Exception {
 
         char[][] Graph = new char[Max - Min][Amout + ValleyNumber + 1];
 
