@@ -1,0 +1,6 @@
+# Ignore the node_modules directory
+/.idea
+/out
+/12.iml
+/gitCommands.txt
+
