@@ -3,6 +3,7 @@ package com.company;
 //import java.io.BufferedWriter;
 //import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -36,7 +37,7 @@ public class Main {
                 }
             }
         }
-        System.out.println(p);
+//        System.out.println(p);
         while (k >= p[minToys]) {
             k = k - p[minToys];
             minToys++;
@@ -47,7 +48,7 @@ public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println("Enter kol-vo n:");
         int n = scanner.nextInt();
         System.out.println("Enter kol-vo k-many:");
@@ -59,7 +60,11 @@ public class Main {
             System.out.println(p[i]);
         }
         System.out.println("Игрушек можно купить :" + maximumToys(p ,k));
+        MaximumToys clasToys = new MaximumToys();
+        clasToys.setMony(k);
+        System.out.println("Вывод класса :" + clasToys.getAmoutToys(p));
     }
+
 }
 
 
