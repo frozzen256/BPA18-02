@@ -12,11 +12,13 @@ public class maximumToys {
                 }
             }
         }
-//        System.out.println(p);
-        while (k >= p[minToys]) {
+        try{while (k >= p[minToys]) {
             k = k - p[minToys];
             minToys++;
             amountToys++;
+        }
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Программа выводит не достоверные данные так как вы ввели отрицательное число в k");
         }
         return amountToys;
     }
