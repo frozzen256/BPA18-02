@@ -1,10 +1,10 @@
-
-
+import java.util.logging.Logger;
 
 //убрала входную переменную и сделала сеттер
 public class Func1 {
 
     private int n;
+
     public void setName(int n) {
         this.n = n;
     }
@@ -19,6 +19,7 @@ public class Func1 {
                     System.out.print(" ");
                 } else {
                     System.out.print("*");
+
                 }
             }
             System.out.println(" ");
