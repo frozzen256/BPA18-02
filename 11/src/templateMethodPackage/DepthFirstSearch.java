@@ -7,7 +7,7 @@ public class DepthFirstSearch extends SearchAlgorithm {
 	private Stack stack = new Stack();
 	
 	@Override
-	public void startSearch(Graph graph, int index) {
+	void startSearch(Graph graph, int index) {
 		System.out.println("Запущен обход в глубину");
 		visitVertex(graph, index);
 		while (!stack. IsEmpty()) {
@@ -24,7 +24,7 @@ public class DepthFirstSearch extends SearchAlgorithm {
 	}
 	
 	@Override
-	public void endSearch(Graph graph) {
+	void endSearch(Graph graph) {
 		System.out.println("Обход в глубину завершен\n");	
 		graph.reset();
 	}
